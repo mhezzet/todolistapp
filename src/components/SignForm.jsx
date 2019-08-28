@@ -15,7 +15,10 @@ export default function SignForm({
   }
 
   return (
-    <form onSubmit={e => e.preventDefault()}>
+    <form
+      style={{ display: 'flex', flexDirection: 'column', padding: '2rem' }}
+      onSubmit={e => e.preventDefault()}
+    >
       <TextField
         id='email'
         label='Email'
@@ -37,7 +40,12 @@ export default function SignForm({
         required
       />
       <p>{errorMessage}</p>
-      <Button type='submit' onClick={() => onSubmit(values)}>
+      <Button
+        variant='contained'
+        style={{ alignSelf: 'center' }}
+        type='submit'
+        onClick={() => onSubmit(values)}
+      >
         {type}
       </Button>
     </form>

@@ -1,0 +1,45 @@
+.container{
+  background-color: #f6f8fe;
+  height: 100vh;
+}
+
+.gradiant{
+  background:  linear-gradient(to right, #81a5fb 0%,#a8eff7 100%);
+  flex-basis: 65%;
+}
+.notgradiant{
+  flex-basis: 35%;
+}
+.gradiantContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.todosContainer{
+  position: absolute;
+  width:80vw;
+  top:10%;
+  left:10%;
+  height:80vh;
+}
+
+.todos{
+  height:60vh;
+  overflow: auto !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .todosContainer {
+    width:90%;
+    left:5%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .todosContainer {
+    width:60%;
+    left:20%;
+  }
+}

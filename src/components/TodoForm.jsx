@@ -15,7 +15,10 @@ export default function TodoForm({
   }
 
   return (
-    <form onSubmit={e => e.preventDefault()}>
+    <form
+      style={{ display: 'flex', flexDirection: 'column', padding: '2rem' }}
+      onSubmit={e => e.preventDefault()}
+    >
       <TextField
         id='title'
         label='Title'
