@@ -1,11 +1,4 @@
 .container {
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card {
   margin: auto;
   width: 95%;
   display: flex;
@@ -13,19 +6,19 @@
 }
 
 @media only screen and (min-width: 450px) {
-  .card {
+  .container {
     width: 90%;
   }
 }
 
 @media only screen and (min-width: 611px) {
-  .card {
+  .container {
     width: 75%;
   }
 }
 
 @media only screen and (min-width: 850px) {
-  .card {
+  .container {
     width: 50%;
   }
 }

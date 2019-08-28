@@ -1,6 +1,7 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 
 export default function SignForm({
   errorMessage,
@@ -39,10 +40,12 @@ export default function SignForm({
         type='password'
         required
       />
-      <p>{errorMessage}</p>
+      <Typography color='error' variant='subtitle1' gutterBottom>
+        {errorMessage}
+      </Typography>
       <Button
         variant='contained'
-        style={{ alignSelf: 'center' }}
+        style={{ alignSelf: 'center', marginTop: 15 }}
         type='submit'
         onClick={() => onSubmit(values)}
       >

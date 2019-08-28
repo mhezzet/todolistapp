@@ -1,14 +1,18 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import history from '../history'
 
 export default function TodoForm({
-  errorMessage,
   type,
   onSubmit,
   initialValue = { title: '', content: '' }
 }) {
   const [values, setValues] = React.useState(initialValue)
+
+  React.useEffect(() => {
+    if (type === 'EDIT') setValues(initialValue)
+  }, [initialValue, type])
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value })
@@ -39,10 +43,29 @@ export default function TodoForm({
         type='text'
         required
       />
-      <p>{errorMessage}</p>
-      <Button type='submit' onClick={() => onSubmit(values)}>
-        {type}
-      </Button>
+      <div
+        style={{
+          display: 'flex',
+          margin: 'auto',
+          justifyContent: 'center',
+          marginTop: 15
+        }}
+      >
+        <Button
+          variant='contained'
+          type='submit'
+          style={{ marginRight: 15 }}
+          onClick={() => {
+            if (values.content === '' || values.title === '') return
+            onSubmit(values)
+          }}
+        >
+          {type}
+        </Button>
+        <Button variant='contained' onClick={() => history.push('/')}>
+          CANCEL
+        </Button>
+      </div>
     </form>
   )
 }
